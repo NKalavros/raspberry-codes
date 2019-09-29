@@ -1,3 +1,5 @@
+#Connecting the Stepper Motor Driver:
+
 [Specs for Wantai NEMA17 stepper motor:](https://grobotronics.com/stepper-motor-42byghw208-2.6kg.cm.html) Rate current is 0.4A
 
 [Some notes on the A4988 stepper motor driver:](https://reprap.org/wiki/A4988_vs_DRV8825_Chinese_Stepper_Driver_Boards)
@@ -5,9 +7,7 @@
 Our driver is equipped with two R100 resistors. We need to calculate the reference voltage for it, the formula being: I_TripMax= Vref/(8*Rs).
 Therefore the current limit being 0.4A, our Vref is 0.4/0.8 = 0.5 V???
 
-Connecting the Stepper Motor Driver:
-
-First, check the image in the repository for the location of the pins. Next, begin making the connections, they are a little different than the actual schematic:
+First, check the [image](https://raw.githubusercontent.com/NKalavros/raspberry-codes/master/IMG_20190929_232454.jpg) in the repository for the location of the pins. Next, begin making the connections, they are a little different than the actual schematic:
 ![Connection schematic](/schematic.png)
 
 1. Connect Logic Ground to Ground rail
