@@ -1,11 +1,12 @@
 #Connecting the Stepper Motor Driver:
 
-[Specs for Wantai NEMA17 stepper motor:](https://grobotronics.com/stepper-motor-42byghw208-2.6kg.cm.html) Rate current is 0.4A
+[Specs for Wantai NEMA17 stepper motor:](https://grobotronics.com/stepper-motor-42byghw208-2.6kg.cm.html) Rate current is 0.4A/phase, whereas rated resistance is 30 Ohm/phase. Therefore the maximum motor supply is 0.4 * 30 = 12V.
 
 [Some notes on the A4988 stepper motor driver:](https://reprap.org/wiki/A4988_vs_DRV8825_Chinese_Stepper_Driver_Boards)
 [And another link on the same subject:](https://www.allegromicro.com/en/Products/Motor-Drivers/Brush-DC-Motor-Drivers/A4988.aspx)
-Our driver is equipped with two R100 resistors. We need to calculate the reference voltage for it, the formula being: I_TripMax= Vref/(8*Rs).
-Therefore the current limit being 0.4A, our Vref is 0.4/0.8 = 0.5 V???
+Our driver is equipped with two R100 resistors. We need to calculate the reference voltage for it, the formula being: Current Limit = VREF × 2.5
+Therefore the current limit being 0.4A, our Vref is 0.16 V???
+Note that in full step mode the current is 70% of the limit, therefore we can go up, since the current must be 0.4A, the limit should be 0.4/(0.7*2.5) = 0,223V
 
 First, check the [image](https://raw.githubusercontent.com/NKalavros/raspberry-codes/master/IMG_20190929_232454.jpg) in the repository for the location of the pins. Next, begin making the connections, they are a little different than the actual schematic:
 ![Connection schematic](/schematic.png)
@@ -36,4 +37,4 @@ First, check the [image](https://raw.githubusercontent.com/NKalavros/raspberry-c
 
 Run the scripts that begin with test to make sure that the motor is working
 
-[Some great resource](https://www.rototron.info/raspberry-pi-stepper-motor-tutorial/)
+[Some great resources](https://www.rototron.info/raspberry-pi-stepper-motor-tutorial/)
