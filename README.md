@@ -6,3 +6,6 @@ Our driver is equipped with two R100 resistors. We need to calculate the referen
 Therefore the current limit being 1.7A, our Vref is 1.7/0.8 = 2,125 V
 
 Connecting the Stepper Motor Driver:
+
+First, check the image in the repository for the location of the pins. Next, begin making the connections
+![Connection schematic](/schematic.png)
